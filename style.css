@@ -116,7 +116,7 @@
 
 /*------------CONTAINER/GRID-------------*/
 .container{
-    max-width: 145rem;
+    max-width: 120rem;
     margin: 0 auto;
     padding: 1rem 1.5rem;
 }
@@ -130,7 +130,18 @@
 
 
 /* =========== HEADER ===========  */
-.header{
+.header-desktop{
+    position: fixed;
+    z-index: 2;
+    transition: .5s ease;
+}
+
+.changeToBlack{
+    background-color: var(--dark);
+    transition: .5s ease;
+}
+
+.header-mobile{
     position: relative;
 }
 
@@ -201,7 +212,7 @@
     .header-mobile-nav{
         position: absolute;
         padding: 0 2rem;
-        background-color: pink;
+        background-color: var(--light);
         max-height: 0;
         overflow: hidden;
         top: 10.5rem;
@@ -309,6 +320,35 @@
 }
 
 
+@media screen and (max-width: 500px) {
+    .banner{
+        height: 100vh;
+    }
+
+    .banner_wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .banner-img img{
+        width: 40rem;
+        height: 25rem;
+    }
+    
+    .banner-text{
+        width: 40rem;
+        text-align: center;
+    }
+
+    .banner-text h2{
+        margin-bottom: 3rem;
+    }
+
+}
+
+
 /* =========== FEATURES ===========  */
 .features{
     padding-top: 10rem;
@@ -346,14 +386,57 @@
     margin: 0 auto;
 }
 
+.features-item-img{
+    margin-bottom: 2rem;
+}
+
 .features-item-list li{
     list-style: disc;
     font-size: 1.5rem;
     text-align: justify;
 }
 
+@media screen and (max-width: 500px){
+    .features{
+        padding-top: 5rem;
+    }
 
-/* =========== FEATURES ===========  */
+    .features_wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 6rem;
+    }
+
+    .features-title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8rem;
+    }
+
+    .features-title h2{
+        font-size: 4rem;
+        padding: 0;
+        margin-bottom: 1rem;
+        border-right: none;
+    }
+
+    .features-title p{
+        text-align: center;
+        width: fit-content;
+        padding-left: 0;
+    }
+
+    .features-item{
+        width: 40rem;
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========== USECASE ===========  */
 .usecase{
     padding: 5rem 0;
     position: relative;
@@ -399,12 +482,12 @@
     top: 50%;
     right: 0;
     left: 0;
-    margin: 0 2rem;
+    margin: 0 9rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 150rem;
-    z-index: 10;
+    max-width: 120rem;
+    z-index: 1;
 }
 
 .tns-nav {
@@ -412,7 +495,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 99;
+    z-index: 1;
     bottom: 2rem;
     right: 30%;
 }
@@ -433,6 +516,21 @@
 
 .tns-outer{
     margin: 0 5rem;
+}
+
+@media screen and (max-width: 500px){
+    .usecase_title{
+        margin-bottom: 3rem;
+    }
+
+    .tns-outer [aria-controls], .tns-outer [data-action] {
+        display: none;
+    }
+
+    .tns-outer{
+        margin: 0 2rem;
+    }
+
 }
 
 
@@ -472,6 +570,10 @@
     color: var(--dark);
 }
 
+.links-nav-list li a:hover{
+    color: var(--violet);
+}
+
 .links-contact h4{
     font-size: 2rem;
     margin-bottom: 2.5rem;
@@ -484,6 +586,10 @@
 .links-contact-list li{
     margin-bottom: 2rem;
     font-size: 1.5rem;
+}
+
+.links-contact-list li span{
+    display: block;
 }
 
 .links-socials h4{
@@ -571,6 +677,60 @@
     font-style: italic;
 }
 
+@media screen and (max-width: 500px) {
+    .links{
+        padding-bottom: 4rem;
+    }
+
+    .links_wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    .links-branding img{
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .links-nav h4{
+        text-align: center;
+    }
+    
+    .links-nav-list{
+        text-align: center;
+    }
+
+    .links-contact h4{
+        text-align: center;
+    }
+    
+    .links-contact{
+        width: 40rem;
+    }
+    
+    .links-contact-list{
+        text-align: center;
+    }
+
+    .links-socials{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .links-socials p{
+        margin-top: 3rem;
+        width: 30rem;
+        text-align: center;
+    }
+
+
+}
+
 
 /* =========== FOOTER ===========  */
 .footer{
@@ -584,4 +744,12 @@
     padding-left: 10rem;
     color: var(--light);
     font-weight: 700;
+}
+
+@media screen and (max-width: 500px) {
+    .footer h6{
+        font-size: 1.3rem;
+        padding-left: 0;
+        text-align: center;
+    }
 }
